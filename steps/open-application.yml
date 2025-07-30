@@ -2,8 +2,7 @@ id: open-application
 learningObjectives:
   - Apply an article-based strategy to a hypothetical change scenario.
 hints:
-  - Think about the article's advice on communication and stakeholder
-    involvement.
+  - Think about the article's advice on communication and stakeholder involvement.
   - Apply a specific strategy mentioned in the article.
 startFlow:
   do:
@@ -11,8 +10,7 @@ startFlow:
       params:
         person: lucca
         messages:
-          - text: Imagine your organization is facing resistance to a new policy. Using a
-              strategy from the article, how would you address this resistance?
+          - text: Imagine your organization is facing resistance to a new policy. Using a strategy from the article, how would you address this resistance?
 trigger:
   type: user_message
   params:
@@ -22,57 +20,26 @@ trigger:
       - actionId: parse_user_response
         name: user_answer
         params:
-          prompt: "
+          prompt: |2-
 
-            \    Please evaluate the user's answer in relation to
-            the expected answer: The answer should describe a strategy from the
-            article, such as engaging stakeholders in dialogue or providing
-            clear information, and explain how it would help address
-            resistance..
-
-            \    # Assessment Criteria
-
-            \    - Determine if the user's response demonstrates a
-            clear understanding of the key concepts and ideas presented in the
-            expected answer.
-
-            \    - Consider synonyms, paraphrasing, and different
-            phrasing that convey the same meaning.
-
-            \    - Be flexible and focus on the essence of the
-            answer rather than exact wording.
-
-            \ \ 
-
-            \    # Response Guidelines:
-
-            \    - If the user's answer is correct or shows
-            sufficient understanding, return 'correct: true'.
-
-            \      - Provide a positive and affirming message,
-            congratulating them and reinforcing their understanding.
-
-            \    - If the user's answer is incorrect or incomplete,
-            return 'correct: false'.
-
-            \      - Gently explain why the answer is not fully
-            correct or what may be missing.
-
-            \      - Encourage them to try again, being empathetic
-            and supportive.
-
-            \ \ 
-
-            \    # Tone and Style:
-
-            \    - Use friendly and encouraging language.
-
-            \    - Be empathetic to the user's learning process.
-
-            \    - Focus on helping the user learn and understand
-            the material.
-
-            \  "
+                Please evaluate the user's answer in relation to the expected answer: The answer should describe a strategy from the article, such as engaging stakeholders in dialogue or providing clear information, and explain how it would help address resistance..
+                # Assessment Criteria
+                - Determine if the user's response demonstrates a clear understanding of the key concepts and ideas presented in the expected answer.
+                - Consider synonyms, paraphrasing, and different phrasing that convey the same meaning.
+                - Be flexible and focus on the essence of the answer rather than exact wording.
+              
+                # Response Guidelines:
+                - If the user's answer is correct or shows sufficient understanding, return 'correct: true'.
+                  - Provide a positive and affirming message, congratulating them and reinforcing their understanding.
+                - If the user's answer is incorrect or incomplete, return 'correct: false'.
+                  - Gently explain why the answer is not fully correct or what may be missing.
+                  - Encourage them to try again, being empathetic and supportive.
+              
+                # Tone and Style:
+                - Use friendly and encouraging language.
+                - Be empathetic to the user's learning process.
+                - Focus on helping the user learn and understand the material.
+              
           schema:
             correct: boolean
             reply: string
@@ -92,10 +59,7 @@ trigger:
             params:
               person: lucca
               messages:
-                - text: That's a wrap! You've navigated change management using every insight from
-                    our uploaded article. Remember, real change starts with
-                    understanding--and you've got that covered. See you in the
-                    next quest!
+                - text: That's a wrap! You've navigated change management using every insight from our uploaded article. Remember, real change starts with understanding--and you've got that covered. See you in the next quest!
           - actionId: finish_step
       else:
         do:
