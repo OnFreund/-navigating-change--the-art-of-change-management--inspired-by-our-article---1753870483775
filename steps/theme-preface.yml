@@ -1,0 +1,26 @@
+id: theme-preface
+learningObjectives:
+  - Connect the quest theme to the uploaded article's perspective on change
+    management.
+hints:
+  - Remember, every step is rooted in the article's content.
+  - If you're unsure, look for clues in the article's structure.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Welcome to the quest! Before we jump in, let's set the stage: every idea
+              here is drawn directly from the uploaded article on change
+              management. We'll use its concepts, language, and examples as our
+              guiding light. Ready to see change management through this
+              article's eyes? Continue when you're ready."
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
