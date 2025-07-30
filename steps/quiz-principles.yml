@@ -1,0 +1,57 @@
+id: quiz-principles
+learningObjectives:
+  - Test understanding of the article's core change management principles.
+hints:
+  - Recall the principles listed in the article's early sections.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Which of the following is NOT highlighted as a core principle of change
+              management in the article?
+    - actionId: quiz_message
+      name: quiz
+      params:
+        person: lucca
+        options:
+          - Clear communication
+          - Ignoring stakeholder concerns
+          - Adaptability
+trigger:
+  type: chat_form_submitted
+  flowNode:
+    switch:
+      key: ${formSubmission}
+      cases:
+        A:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Nope! The article definitely emphasizes clear communication as a core
+                      principle.
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        B:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Correct! The article warns against ignoring stakeholders--it's not a
+                      recommended principle.
+            - actionId: finish_step
+        C:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Not quite. Adaptability is a key principle according to the article.
+            - actionId: replay_action
+              params:
+                actionName: quiz
