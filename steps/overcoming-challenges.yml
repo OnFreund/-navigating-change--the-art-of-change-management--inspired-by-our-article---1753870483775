@@ -1,0 +1,25 @@
+id: overcoming-challenges
+learningObjectives:
+  - Explore strategies for overcoming change management challenges, as suggested
+    by the article.
+hints:
+  - Focus on the article's recommended solutions.
+  - Notice how the strategies align with the earlier principles.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: The article doesn't just list challenges--it offers solutions. For example,
+              it suggests proactive communication and involving stakeholders
+              early to overcome resistance. These strategies are grounded in the
+              article's practical approach. Continue when you're ready.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
