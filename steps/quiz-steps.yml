@@ -1,0 +1,55 @@
+id: quiz-steps
+learningObjectives:
+  - Assess knowledge of the article's change management steps.
+hints:
+  - Check the article's process breakdown for the initial step.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: According to the article, what is the first step in a successful change
+              management process?
+    - actionId: quiz_message
+      name: quiz
+      params:
+        person: lucca
+        options:
+          - Implementing the change immediately
+          - Assessing readiness for change
+          - Celebrating success
+trigger:
+  type: chat_form_submitted
+  flowNode:
+    switch:
+      key: ${formSubmission}
+      cases:
+        A:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Not quite! The article recommends preparation before jumping in.
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        B:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Correct! The article starts with assessing readiness.
+            - actionId: finish_step
+        C:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Nope. That comes much later in the process.
+            - actionId: replay_action
+              params:
+                actionName: quiz
