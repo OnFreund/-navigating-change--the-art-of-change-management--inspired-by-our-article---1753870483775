@@ -1,0 +1,27 @@
+id: principles-of-change
+learningObjectives:
+  - Understand the core principles of change management as described in the
+    article.
+hints:
+  - Think about how the article emphasizes communication and engagement.
+  - Look for examples in the article that illustrate these principles.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Let's start with the basics. The article outlines several core principles
+              of change management, such as the importance of clear
+              communication, stakeholder engagement, and adaptability. These
+              aren't just buzzwords--they're the backbone of any successful
+              change initiative, according to our source. When you're ready,
+              let's move on.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
