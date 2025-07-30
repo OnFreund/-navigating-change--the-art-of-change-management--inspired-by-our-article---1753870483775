@@ -1,0 +1,26 @@
+id: steps-in-change
+learningObjectives:
+  - Identify the key steps in a change management process, as detailed in the
+    article.
+hints:
+  - Refer to the article's step-by-step breakdown.
+  - Notice how each step builds on the previous one.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "The article breaks down change management into actionable steps:
+              assessing readiness, planning, implementing, and reviewing. Each
+              step is crucial, and the article provides practical advice for
+              navigating them. Let's keep these steps in mind as we move
+              forward. Continue when you're ready."
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
