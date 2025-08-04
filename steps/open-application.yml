@@ -59,7 +59,7 @@ trigger:
             params:
               person: lucca
               messages:
-                - That's a wrap! You've navigated change management. Remember, real change starts with understanding--and you've got that covered. See you in the next quest!
+                - That's a wrap! You've navigated change management. Remember, real change starts with understanding - and you've got that covered. See you in the next quest!
           - actionId: finish_step
       else:
         do:
